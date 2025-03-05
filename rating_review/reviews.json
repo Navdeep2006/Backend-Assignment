@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1741201311393",
+    "productId": "1741201208847",
+    "timestamp": "2025-03-05T19:01:51.393Z",
+    "rating": 5,
+    "message": "Amazing phone!"
+  },
+  {
+    "id": "1741201317440",
+    "productId": "1741201208847",
+    "timestamp": "2025-03-05T19:01:57.440Z",
+    "rating": 4,
+    "message": "Amazing phone!"
+  }
+]
