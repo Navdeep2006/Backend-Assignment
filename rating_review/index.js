@@ -15,7 +15,7 @@ const readData = (file) => {
 };
 
 const writeData = (file, data) => {
-    fs.writeFileSync(file, JSON.stringify(data, null, 2)); // understand this line.
+    fs.writeFileSync(file, JSON.stringify(data, null, 2));
 };
 
 app.post("/products", (req, res) => {
@@ -31,7 +31,7 @@ app.post("/products", (req, res) => {
     res.status(201).json(newProduct);
 });
 
-app.get("/products", (req, res) => {  // this part.
+app.get("/products", (req, res) => { 
     let products = readData(productfile);
     if (req.query.sortBy === "rating") {
         products.sort((a, b) => b.averageRating - a.averageRating);

@@ -18,22 +18,21 @@ app.post("/books", (req, res) => {
   } else {
     book_id = books[books.length - 1].id + 1;
   }
-  const new_book = {
-    id: book_id,
-    title: req.body.title,
-    author: req.body.author,
-    price: req.body.price,
-  };
+  
   const { title, price, author } = req.body;
   if (!title || !price || !author || price < 0) {
-    res.status(400).json({message: "All field are required and price must be positive number"});
+    return res.status(400).json({message: "All field are required and price must be positive number"});
   }
-  let { price: price1 } = new_book;
-  if (price1 > 0) {
-    books.push(new_book);
-    console.log(books);
-    res.status(201).json({ message: "book added..." });
-  }
+  const new_book = {
+    id: book_id,
+    title: title,
+    author: author,
+    price: price,
+  };
+  
+  books.push(new_book);
+  console.log(books);
+  res.status(201).json({ message: "book added..." });
 });
 
 // this is the code for show casing the whole collection of the books.
